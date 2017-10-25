@@ -1,0 +1,7 @@
+<h1>All Tasks</h1>
+@foreach (var task in @Model)
+{
+<p>@task.GetDescription()      @task.GetDueDate()</p>
+}
+<br>
+<a href="/">Home</a>

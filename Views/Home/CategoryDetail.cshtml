@@ -1,0 +1,18 @@
+<h3>Here are all the tasks in category:</h3>
+<ol>
+@foreach (var task in @Model["tasks"])
+{
+  <li>@task.GetDescription() @task.GetDueDate()</li>
+}
+</ol>
+
+<form action="/Tasks/Delete" method="post">
+  <button type="submit" class="btn btn-success">Delete All Tasks</button>
+</form>
+
+<form action="/Categories/@Model["category"].GetId()/Delete" method="post">
+  <button type="submit" class="btn btn-success">Delete This Category</button>
+</form>
+
+<p><a href='/categories/@Model["category"].GetId()/tasks/new'>Add a new task</a></p>
+<p><a href='/'>Return to Main Page</a></p>
